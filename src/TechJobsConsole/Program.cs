@@ -118,20 +118,21 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
+            if(someJobs.Count == 0)
+            {
+                Console.WriteLine("No Jobs Found");
+                return;
+            }
             foreach(Dictionary<string,string> job in someJobs)
             {
                 Console.WriteLine("\n*****");
                 Console.WriteLine($"name: {job["name"]}");
                 Console.WriteLine($"employer: {job["employer"]}");
                 Console.WriteLine($"location: {job["location"]}");
-                Console.WriteLine($"location: {job["position type"]}");
+                Console.WriteLine($"position type: {job["position type"]}");
                 Console.WriteLine($"core competency: {job["core competency"]}");
                 Console.WriteLine("*****");
-
-
             }
-            
-
         }
     }
 }
